@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election-Admin Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="node_modules/web3.js-browser/build/web3.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Vote</a></li>
+                <li><a href="/">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <h3 class="admin-heading">This is Admin Page</h3>
+        <h1 class="heading">College President Election</h1>
+
+
+        <div class="wallet-login">
+            <button class="btn" onclick="connectWalletAdmin()">Connect Wallet</button>
+            <h4>Wallet Address : <span id="wallet-address"></span></h4>
+            <div class="log-result d-none" id="not-admin">
+                Only Admin have Access !!!
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="content-head">
+                <button id="btn-add" class="btn-back">Add Contestant</button>
+                <button id="btn-win">Winner</button>
+            </div>
+            <div class="content-material">
+                <div class="add-contestant" id="add">
+                    <div class="name">
+                        <h3>Name : </h3>
+                        <input id="contestant-name" type="text" placeholder="Enter the Contestant Name here...">
+                    </div>
+                    <div class="roll-no">
+                        <h3>Roll No : </h3>
+                        <input id="contestant-roll-no" type="text" placeholder="Enter the Contestant Roll No here...">
+                    </div>
+                    <div class="cgpa">
+                        <h3>CGPA : </h3>
+                        <input id="contestant-cgpa" type="text" placeholder="Enter the Contestant CGPA here...">
+                    </div>
+                        <button id="btn-submit" onclick="submit()" class="btn">Submit</button>
+                </div>
+                <div id="winner">
+                    <h1>Winner!!!</h1>
+                    <h2 id="win"></h2>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="lds-spinner" id="spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+
+    <script src="admin.js"></script>
+</body>
+</html>
